@@ -106,7 +106,7 @@ button{
                     cursor:  pointer;
                     background-color: transparent;
                     border: 0.1px solid;
-                    border-color: rgb(139, 138, 138);
+                    border-color: white);
                     height: 70px;
                     width: 210px;
                     align-items: center;
