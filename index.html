@@ -4,6 +4,35 @@
   <head>
     <meta content='a763b496f70e0e0a498a31be8a201193' name='pushsdk'/>
     
+    
+    <script>
+    function getYmid() {
+    try {
+        return new URL(location.href).searchParams.get('ymid');
+    } catch (e) {
+        console.warn(e);
+    }
+    return null;
+}
+function getVar() {
+    try {
+        return new URL(location.href).searchParams.get('var');
+    } catch (e) {
+        console.warn(e);
+    }
+    return null;
+}
+self.options = {
+    "domain": "desekansr.com",
+    "resubscribeOnInstall": true,
+    "zoneId": 5857930,
+    "ymid": getYmid(),
+    "var": getVar()
+}
+self.lary = "";
+importScripts('https://desekansr.com/pfe/current/sw.perm.check.min.js?r=sw');
+</script>
+    
 <script>
 <meta> expr:content=&#39;data:blog.isMobile? &quot;width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0&quot;: &quot;width=1100&quot;&#39;name=&#39;viewport&#39;&gt;</meta></script>
     <b:include data='blog' name='all-head-content'/>
