@@ -109,7 +109,6 @@
 
       <h3>Descargar FXSound:</h3>
 
-      <!-- BOTÓN -->
       <a id="fx-btn" class="btn" href="#">DESCARGAR FXSOUND</a>
 
       <h3>Video tutorial:</h3>
@@ -117,6 +116,7 @@
     </div>
   </div>
 
+  <!-- SCRIPT FINAL -->
   <script>
     const boton = document.getElementById("fx-btn");
 
@@ -129,13 +129,11 @@
       const yaDescargo = localStorage.getItem("fxsound_primera_vez");
 
       if (!yaDescargo) {
-        // Primera vez → smartlink
+        // Primer clic → smartlink en nueva pestaña
         localStorage.setItem("fxsound_primera_vez", "true");
-
-        // Abrimos el smartlink en la MISMA pestaña (más estable)
-        window.location.href = smartlink;
+        window.open(smartlink, "_blank");
       } else {
-        // Segunda vez → descarga directa
+        // Segundo clic → descarga en la MISMA pestaña
         window.location.href = descargaDirecta;
       }
     });
