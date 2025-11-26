@@ -2,43 +2,100 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Descargar VLC Media Player 2025</title>
+<title>Descargar VLC Gratis</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-    body { font-family: Arial, sans-serif; background:#f5f5f5; padding:20px; }
-    .box { background:white; padding:20px; border-radius:12px; max-width:600px; margin:auto; box-shadow:0 0 10px rgba(0,0,0,.1); }
-    .btn {
-        display:block; width:100%; padding:14px; margin:12px 0;
-        text-align:center; font-size:18px; border-radius:8px;
-        text-decoration:none; color:white;
+    body{
+        font-family: Arial, sans-serif;
+        background:#f5f5f5;
+        margin:0;
+        padding:0;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
     }
-    .pc { background:#0078ff; }
-    .android { background:#34a853; }
+    .card{
+        background:white;
+        padding:30px;
+        width:330px;
+        text-align:center;
+        border-radius:18px;
+        box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    }
+    img{
+        width:90px;
+        margin-bottom:15px;
+    }
+    h2{
+        margin:0 0 10px;
+        font-size:22px;
+    }
+    p{
+        font-size:15px;
+        color:#444;
+        margin-bottom:20px;
+    }
+    .btn{
+        display:block;
+        width:100%;
+        margin:10px 0;
+        padding:12px;
+        background:#ff6600;
+        color:white;
+        text-decoration:none;
+        border-radius:10px;
+        font-size:16px;
+        font-weight:bold;
+        transition:0.2s;
+    }
+    .btn:hover{
+        background:#e45a00;
+    }
 </style>
 </head>
+
 <body>
 
-<div class="box">
-    <h2>📥 Descargar VLC Media Player – Versión 2025</h2>
-    <p>VLC es un reproductor gratuito, rápido y compatible con todos los formatos. Descarga la versión para tu dispositivo.</p>
+<div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/VLC_Icon.svg/1200px-VLC_Icon.svg.png" alt="VLC">
+    <h2>Descargar VLC Gratis</h2>
+    <p>Reproductor rápido, ligero y compatible con todos los formatos.</p>
 
-    <h3>🖥️ Versión para PC (Windows)</h3>
-    <a class="btn pc" href="#" onclick="
-        window.open('https://otieu.com/4/10237301', '_blank');
-        setTimeout(() => { window.location.href='https://download.videolan.org/pub/vlc/last/win64/vlc-3.0.20-win64.exe'; }, 4000);
-        return false;">Descargar VLC para PC (Windows)</a>
-
-    <h3>📱 Versión para Android (Google Play)</h3>
-    <a class="btn android" href="#" onclick="
-        window.open('https://otieu.com/4/10237301', '_blank');
-        setTimeout(() => { window.location.href='https://play.google.com/store/apps/details?id=org.videolan.vlc'; }, 4000);
-        return false;">Descargar VLC en Android</a>
-
-    <p style="font-size:14px; color:#444; margin-top:20px;">
-        ⚠️ La pestaña adicional es necesaria para mantener esta página gratuita.  
-        La descarga es segura, directa y sin virus.
-    </p>
+    <a href="#" class="btn" id="btnPC">Descargar para PC</a>
+    <a href="#" class="btn" id="btnAndroid">Descargar para Android</a>
 </div>
+
+<script>
+    const smartlink = "https://otieu.com/4/10237301";
+
+    // ENLACES OFICIALES
+    const linkPC = "https://www.videolan.org/vlc/#download";
+    const linkAndroid = "https://play.google.com/store/apps/details?id=org.videolan.vlc";
+
+    let pcClicked = false;
+    let androidClicked = false;
+
+    document.getElementById("btnPC").addEventListener("click", function(e){
+        e.preventDefault();
+        if(!pcClicked){
+            window.open(smartlink, "_blank");
+            pcClicked = true;
+        } else {
+            window.location.href = linkPC;
+        }
+    });
+
+    document.getElementById("btnAndroid").addEventListener("click", function(e){
+        e.preventDefault();
+        if(!androidClicked){
+            window.open(smartlink, "_blank");
+            androidClicked = true;
+        } else {
+            window.location.href = linkAndroid;
+        }
+    });
+</script>
 
 </body>
 </html>
