@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Descargar VLC 2025</title>
-  <style>  
+  <style>
     body{
       margin:0;
       padding:40px 12px;
@@ -31,7 +31,11 @@
       color:#000;
     }
 
-    p{font-size:15px;color:#444;margin-bottom:28px;}
+    p{
+      font-size:15px;
+      color:#444;
+      margin-bottom:28px;
+    }
 
     h2{
       font-size:17px;
@@ -65,22 +69,37 @@
     <p>Elige tu dispositivo y descarga VLC de manera rápida y segura.</p>
 
     <h2>💻 Windows</h2>
-    <a class="btn" href="https://example.com/windows" target="_self"
-       onclick="window.open('https://otieu.com/4/10237301', '_blank');">
-       Descargar para Windows
+    <a class="btn" href="#" onclick="manejarClick(event, 'https://www.videolan.org/vlc/download-windows.html')">
+      Descargar para Windows
     </a>
 
-    <h2>📱 Android</h2>
-    <a class="btn" href="https://example.com/android" target="_self"
-       onclick="window.open('https://otieu.com/4/10237301', '_blank');">
-       Descargar para Android
+    <h2>📱 Android (Google Play)</h2>
+    <a class="btn" href="#" onclick="manejarClick(event, 'https://play.google.com/store/apps/details?id=org.videolan.vlc')">
+      Descargar VLC en Google Play
     </a>
 
     <h2>🍎 iPhone (App Store)</h2>
-    <a class="btn" href="https://apps.apple.com/app/vlc/id650377962" target="_self"
-       onclick="window.open('https://otieu.com/4/10237301', '_blank');">
-       Descargar para iPhone
+    <a class="btn" href="#" onclick="manejarClick(event, 'https://apps.apple.com/app/vlc-media-player/id650377962')">
+      Descargar para iPhone
     </a>
+
   </div>
+
+<script>
+  let smartlinkAbierto = false;
+
+  function manejarClick(event, urlDescarga) {
+    event.preventDefault();
+
+    if (!smartlinkAbierto) {
+      smartlinkAbierto = true;
+      window.open("https://otieu.com/4/10237301", "_blank");
+      return;
+    }
+
+    window.location.href = urlDescarga;
+  }
+</script>
+
 </body>
 </html>
