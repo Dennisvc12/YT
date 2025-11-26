@@ -1,44 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Descargar VLC Media Player 2025</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-    body { font-family: Arial, sans-serif; background:#f5f5f5; padding:20px; }
-    .box { background:white; padding:20px; border-radius:12px; max-width:600px; margin:auto; box-shadow:0 0 10px rgba(0,0,0,.1); }
-    .btn {
-        display:block; width:100%; padding:14px; margin:12px 0;
-        text-align:center; font-size:18px; border-radius:8px;
-        text-decoration:none; color:white;
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Descargar VLC 2025</title>
+  <style>
+    body{
+      margin:0;
+      padding:40px 12px;
+      font-family:Arial, sans-serif;
+      background:#ffffff;
+      display:flex;
+      justify-content:center;
     }
-    .pc { background:#0078ff; }
-    .android { background:#34a853; }
-</style>
+
+    .box{
+      width:100%;
+      max-width:480px;
+      background:#fff;
+      border:1px solid #e5e5e5;
+      border-radius:14px;
+      padding:32px;
+      text-align:center;
+      box-shadow:0 4px 14px rgba(0,0,0,0.06);
+    }
+
+    h1{
+      font-size:26px;
+      margin-bottom:10px;
+      color:#000;
+    }
+
+    p{font-size:15px;color:#444;margin-bottom:28px;}
+
+    h2{
+      font-size:17px;
+      margin:14px 0 8px;
+      color:#000;
+    }
+
+    .btn{
+      display:block;
+      width:100%; max-width:260px;
+      margin:0 auto 18px;
+      padding:10px 0;
+      font-size:14px;
+      font-weight:700;
+      background:#ff7b00;
+      background:linear-gradient(180deg,#ff7b00,#e86100);
+      color:#fff;
+      border-radius:8px;
+      text-decoration:none;
+    }
+
+    @media(max-width:480px){
+      .btn{max-width:100%;font-size:13px;padding:9px 0;}
+    }
+  </style>
 </head>
 <body>
+  <div class="box">
+    <h1>Descargar VLC Media Player 2025</h1>
+    <p>Elige tu dispositivo y descarga VLC de manera rápida y segura.</p>
 
-<div class="box">
-    <h2>📥 Descargar VLC Media Player – Versión 2025</h2>
-    <p>VLC es un reproductor gratuito, rápido y compatible con todos los formatos. Descarga la versión para tu dispositivo.</p>
+    <h2>💻 Windows</h2>
+    <a class="btn" href="#SMARTLINK">Descargar para Windows</a>
 
-    <h3>🖥️ Versión para PC (Windows)</h3>
-    <a class="btn pc" href="#" onclick="
-        window.open('https://otieu.com/4/10237301', '_blank');
-        setTimeout(() => { window.location.href='https://download.videolan.org/pub/vlc/last/win64/vlc-3.0.20-win64.exe'; }, 4000);
-        return false;">Descargar VLC para PC (Windows)</a>
+    <h2>📱 Android</h2>
+    <a class="btn" href="#ANDROID">Descargar para Android</a>
 
-    <h3>📱 Versión para Android (Google Play)</h3>
-    <a class="btn android" href="#" onclick="
-        window.open('https://otieu.com/4/10237301', '_blank');
-        setTimeout(() => { window.location.href='https://play.google.com/store/apps/details?id=org.videolan.vlc'; }, 4000);
-        return false;">Descargar VLC en Android</a>
-
-    <p style="font-size:14px; color:#444; margin-top:20px;">
-        ⚠️ La pestaña adicional es necesaria para mantener esta página gratuita.  
-        La descarga es segura, directa y sin virus.
-    </p>
-</div>
-
+    <h2>🍎 iPhone (App Store)</h2>
+    <a class="btn" href="https://apps.apple.com/app/vlc/id650377962">Descargar para iPhone</a>
+  </div>
 </body>
 </html>
