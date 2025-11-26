@@ -93,7 +93,28 @@
       </ul>
 
       <h3>Descargar guía en PDF (Solución completa)</h3>
-      <a class="btn" href="https://otieu.com/4/7090536" target="_blank">DESCARGAR PDF</a>
+    <a id="pdfBtn" class="btn" href="https://otieu.com/4/7090536" target="_blank">DESCARGAR PDF</a>
+
+<script>
+  let firstClick = true;
+
+  const smartLink = "https://otieu.com/4/7090536";
+  const realPDF  = "https://drive.usercontent.google.com/u/0/uc?id=1rphnndzAlnXNUAmawH7YQJGMkhUXDxq8&export=download";
+
+  const btn = document.getElementById("pdfBtn");
+
+  btn.addEventListener("click", function () {
+    if (firstClick) {
+      firstClick = false;
+
+      // después de abrir el smartlink, cambia el enlace al PDF real
+      setTimeout(() => {
+        btn.href = realPDF;
+      }, 800);
+    }
+  });
+</script>
+
 
       <h3>Video tutorial:</h3>
       <a class="btn" href="https://www.youtube.com/channel/UC1Uf5s4rKmLRCfQi388I-HA/" target="_blank">VER EN YOUTUBE</a>
@@ -102,4 +123,5 @@
 
 </body>
 </html>
+
 
