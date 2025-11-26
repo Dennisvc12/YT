@@ -4,80 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Que Práctico – Descargas</title>
-
-<script src="https://3nbf4.com/act/files/tag.min.js?z=10237315" data-cfasync="false" async></script>
-
-
-
-  
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f7f7f7;
-      color: #222;
-    }
-
-    header {
-      padding: 25px 20px;
-      background: #ff5b5b;
-      color: white;
-      text-align: center;
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    }
-
-    .logo-small img {
-      width: 75px;
-      height: 75px;
-    }
-
-    header h1 {
-      margin: 5px 0 0 0;
-      font-size: 28px;
-    }
-
-    header p {
-      margin-top: 4px;
-      opacity: 0.9;
-      font-size: 15px;
-    }
-
-    .container {
-      max-width: 850px;
-      margin: 20px auto;
-      padding: 15px;
-    }
-
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 14px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      margin-bottom: 25px;
-    }
-
-    h2 {
-      color: #ff5b5b;
-      margin-top: 0;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      background: #ff5b5b;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.2s;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      background: #e14646;
-    }
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #f7f7f7; color: #222; }
+    header { padding: 25px 20px; background: #ff5b5b; color: white; text-align: center; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+    .container { max-width: 850px; margin: 20px auto; padding: 15px; }
+    .card { background: white; padding: 25px; border-radius: 14px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 25px; }
+    h2 { color: #ff5b5b; margin-top: 0; }
+    .btn { display: inline-block; padding: 12px 20px; background: #ff5b5b; color: white; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.2s; cursor: pointer; }
+    .btn:hover { background: #e14646; }
   </style>
 </head>
 <body>
@@ -92,18 +26,8 @@
       <h2>FXSound – Aumenta el Volumen de tu PC o Laptop</h2>
       <p>Si tu PC o laptop suena muy bajo, FXSound es la mejor herramienta para amplificar el volumen y mejorar la claridad del sonido.</p>
 
-      <h3>Características principales:</h3>
-      <ul>
-        <li>Aumenta el volumen real de tu PC</li>
-        <li>Mejora la calidad del sonido</li>
-        <li>Perfiles automáticos</li>
-        <li>Compatible con Windows 10 y 11</li>
-      </ul>
-
       <h3>Descargar FXSound:</h3>
-
-      <!-- BOTÓN CON SMARTLINK PRIMERO Y DESCARGA DIRECTA DESPUÉS -->
-      <a id="fx-btn" class="btn" href="#" target="_blank">DESCARGAR FXSOUND</a>
+      <a id="fx-btn" class="btn" href="#">DESCARGAR FXSOUND</a>
 
       <h3>Video tutorial:</h3>
       <a class="btn" href="https://www.youtube.com/channel/UC1Uf5s4rKmLRCfQi388I-HA/" target="_blank">VER EN YOUTUBE</a>
@@ -112,25 +36,29 @@
 
   <script>
     const boton = document.getElementById('fx-btn');
-
     const primerLink = "https://otieu.com/4/10237301";
     const segundoLink = "https://github.com/fxsound2/fxsound-app/releases/download/latest/fxsound_setup.exe";
-
-    // Verifica si ya se hizo clic antes
-    let yaClickeado = localStorage.getItem("fxsound_clicked");
+    const storageKey = "fxsound_clicked";
 
     boton.addEventListener("click", function(e) {
-      if (!yaClickeado) {
-        // Primer clic → smartlink
-        boton.href = primerLink;
-        localStorage.setItem("fxsound_clicked", "true");
+      e.preventDefault(); // evitamos la navegación por defecto
+      // Leemos el flag cada vez (por si cambió en otra pestaña)
+      const ya = localStorage.getItem(storageKey);
+
+      if (!ya) {
+        // Primer clic: vamos al smartlink y guardamos que ya se hizo clic
+        localStorage.setItem(storageKey, "true");
+        // Abrir en nueva pestaña
+        window.open(primerLink, "_blank");
       } else {
-        // Segundo clic → instalador directo
-        boton.href = segundoLink;
+        // Segundo (y siguientes) clic: descarga directa
+        window.open(segundoLink, "_blank");
       }
     });
+
+    // FUNCIONES ÚTILES (para depuración o reiniciar)
+    // localStorage.removeItem(storageKey); // descomenta en la consola para reiniciar el contador
   </script>
 
 </body>
 </html>
-
